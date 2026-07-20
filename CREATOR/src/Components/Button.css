@@ -1,0 +1,36 @@
+
+
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--bleu);
+  color: var(--blanc);
+}
+
+.btn-primary:hover {
+  background: var(--bleu-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--bleu);
+  border: 1.5px solid var(--bleu);
+}
+
+.btn-secondary:hover {
+  background: var(--bleu-light);
+}

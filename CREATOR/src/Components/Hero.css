@@ -1,0 +1,168 @@
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 96px 24px 80px;
+  background: linear-gradient(160deg, #f0f6ff 0%, #ffffff 60%);
+  background-size: 200% 200%;
+  animation: hero-gradient 12s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes hero-gradient {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Formes flottantes en arrière-plan */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 320px;
+  height: 320px;
+  background: var(--bleu-light, #dbeafe);
+  top: -80px;
+  left: -80px;
+  animation: float-blob 9s ease-in-out infinite;
+}
+
+.hero::after {
+  width: 260px;
+  height: 260px;
+  background: #ede9fe;
+  bottom: -60px;
+  right: -60px;
+  animation: float-blob 11s ease-in-out infinite reverse;
+}
+
+@keyframes float-blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 20px) scale(1.1); }
+}
+
+/* Tous les enfants du hero passent au-dessus des formes flottantes */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation d'entrée en cascade */
+.hero-badge,
+.hero h1,
+.hero-subtitle,
+.hero-actions,
+.hero-note,
+.hero-trust {
+  opacity: 0;
+  animation: fade-up 0.7s ease forwards;
+}
+
+.hero-badge   { animation-delay: 0.05s; }
+.hero h1      { animation-delay: 0.15s; }
+.hero-subtitle{ animation-delay: 0.3s; }
+.hero-actions { animation-delay: 0.45s; }
+.hero-note    { animation-delay: 0.55s; }
+.hero-trust   { animation-delay: 0.65s; }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bleu-light);
+  color: var(--bleu);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+  border: 1px solid #bfdbfe;
+  animation-name: fade-up, badge-pulse;
+  animation-duration: 0.7s, 2.5s;
+  animation-delay: 0.05s, 1s;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: ease, ease-in-out;
+  animation-fill-mode: forwards, none;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.15); }
+  50% { box-shadow: 0 0 0 6px rgba(37, 99, 235, 0); }
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--texte);
+  max-width: 760px;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--bleu);
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--texte-soft);
+  max-width: 540px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.hero-note {
+  font-size: 0.82rem;
+  color: var(--texte-soft);
+  margin-bottom: 60px;
+}
+
+.hero-trust {
+  font-size: 0.9rem;
+  color: var(--texte-soft);
+  max-width: 580px;
+  line-height: 1.7;
+  padding: 20px 28px;
+  background: var(--blanc);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-trust:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}

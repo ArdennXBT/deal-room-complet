@@ -1,0 +1,332 @@
+
+
+.campagnes-page {
+  width: 100%;
+}
+
+/* HERO */
+.campagnes-hero {
+  background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-dark) 100%);
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+  color: var(--blanc);
+}
+
+.campagnes-hero h1 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  line-height: 1.25;
+}
+
+.campagnes-hero p {
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto;
+  opacity: 0.92;
+  line-height: 1.6;
+}
+
+/* CONTENU PRINCIPAL */
+.campagnes-contenu {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.campagnes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.campagnes-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--texte);
+}
+
+.btn-primaire {
+  padding: 0.75rem 1.4rem;
+  background-color: var(--bleu);
+  color: var(--blanc);
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primaire:hover {
+  background-color: var(--bleu-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primaire:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-secondaire {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background-color: var(--blanc);
+  color: var(--bleu);
+  border: 1.5px solid var(--bleu);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+
+.btn-secondaire:hover:not(:disabled) {
+  background-color: var(--bleu);
+  color: var(--blanc);
+}
+
+.btn-secondaire:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: var(--gris-bg);
+  color: var(--texte-soft);
+  border-color: var(--border);
+}
+
+/* FORMULAIRE */
+.campagne-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.8rem;
+  margin-bottom: 2.5rem;
+  background-color: var(--blanc);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.campagne-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texte-soft);
+  margin-bottom: -0.6rem;
+}
+
+.campagne-form input,
+.campagne-form textarea {
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  color: var(--texte);
+  resize: vertical;
+}
+
+.campagne-form input:focus,
+.campagne-form textarea:focus {
+  outline: none;
+  border-color: var(--bleu);
+}
+
+.campagne-form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.campagne-form-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campagne-form-col label {
+  margin-bottom: 0;
+}
+
+/* GRILLE DE CAMPAGNES */
+.campagnes-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.campagne-card {
+  background-color: var(--blanc);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campagne-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.campagne-card-cover {
+  position: relative;
+  padding: 1.6rem 1.5rem 3rem;
+  background: linear-gradient(135deg, var(--degrade-debut, #dbeafe) 0%, var(--degrade-fin, #ede9fe) 100%);
+}
+
+.campagne-card:nth-child(3n+1) .campagne-card-cover {
+  --degrade-debut: #fde8d7;
+  --degrade-fin: #fce7f3;
+}
+
+.campagne-card:nth-child(3n+2) .campagne-card-cover {
+  --degrade-debut: #ede9fe;
+  --degrade-fin: #dbeafe;
+}
+
+.campagne-card:nth-child(3n+3) .campagne-card-cover {
+  --degrade-debut: #cffafe;
+  --degrade-fin: #dbeafe;
+}
+
+.campagne-avatar {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.5rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: var(--bleu);
+  color: var(--blanc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.campagne-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--blanc);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--bleu);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.campagne-card-body {
+  padding: 1.4rem 1.5rem 1.6rem;
+  margin-top: -1.6rem;
+  background-color: var(--blanc);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  position: relative;
+}
+
+.campagne-card-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--texte-soft);
+  margin-bottom: 0.4rem;
+}
+
+.campagne-card-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--texte);
+  line-height: 1.35;
+  margin: 0 0 0.7rem;
+}
+
+.campagne-description {
+  color: var(--texte-soft);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 1.1rem;
+}
+
+.campagne-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.campagne-stat {
+  text-align: center;
+  padding: 0.6rem 0.3rem;
+  background-color: var(--gris-bg);
+  border-radius: var(--radius);
+}
+
+.campagne-stat strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--bleu);
+}
+
+.campagne-stat span {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--texte-soft);
+}
+
+.campagne-highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #16a34a;
+  margin-bottom: 1rem;
+}
+
+/* ÉTATS */
+.campagnes-chargement,
+.campagnes-vide {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--texte-soft);
+  font-size: 0.95rem;
+}
+
+.erreur-message {
+  color: #dc2626;
+  font-size: 0.85rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.info-message {
+  color: #16a34a;
+  font-size: 0.85rem;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}

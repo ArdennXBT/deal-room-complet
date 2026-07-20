@@ -1,0 +1,33 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blanc:      #ffffff;
+  --gris-bg:    #f8f9fc;
+  --texte:      #0f172a;
+  --texte-soft: #475569;
+  --bleu:       #2563eb;
+  --bleu-dark:  #1d4ed8;
+  --bleu-light: #eff6ff;
+  --border:     #e2e8f0;
+  --radius:     10px;
+  --radius-lg:  16px;
+  --shadow:     0 4px 24px rgba(37, 99, 235, 0.08);
+  --font:       'Plus Jakarta Sans', sans-serif;
+  width: 100%;
+  max-width: 100%;
+  border: none;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background-color: var(--blanc);
+  color: var(--texte);
+  line-height: 1.6;
+  font-size: 16px;
+}

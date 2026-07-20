@@ -1,0 +1,53 @@
+<svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="lineArea" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="450" rx="16" fill="url(#bg3)"/>
+  <rect x="1" y="1" width="598" height="448" rx="15" fill="none" stroke="#bfdbfe" stroke-width="2"/>
+
+  <!-- 4 cartes stats en haut -->
+  <rect x="32" y="32" width="128" height="86" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="48" y="60" font-family="Arial, sans-serif" font-size="9" font-weight="600" fill="#6b7280">CAMPAGNES</text>
+  <text x="48" y="88" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#111827">12</text>
+  <text x="48" y="104" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#16a34a">↑ 3 actives</text>
+
+  <rect x="170" y="32" width="128" height="86" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="186" y="60" font-family="Arial, sans-serif" font-size="9" font-weight="600" fill="#6b7280">BUDGET TOTAL</text>
+  <text x="186" y="88" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#111827">18.4K€</text>
+  <text x="186" y="104" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#16a34a">↑ 12% ce mois</text>
+
+  <rect x="308" y="32" width="128" height="86" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="324" y="60" font-family="Arial, sans-serif" font-size="9" font-weight="600" fill="#6b7280">CRÉATEURS</text>
+  <text x="324" y="88" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#111827">27</text>
+  <text x="324" y="104" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#16a34a">↑ 5 nouveaux</text>
+
+  <rect x="446" y="32" width="122" height="86" rx="12" fill="#2563eb"/>
+  <text x="462" y="60" font-family="Arial, sans-serif" font-size="9" font-weight="600" fill="#dbeafe">ENGAGEMENT</text>
+  <text x="462" y="88" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#ffffff">5.8%</text>
+  <text x="462" y="104" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#dbeafe">↑ au-dessus moy.</text>
+
+  <!-- Graphique principal -->
+  <rect x="32" y="134" width="536" height="284" rx="14" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="52" y="162" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#111827">Performance des campagnes</text>
+
+  <line x1="52" y1="380" x2="548" y2="380" stroke="#e5e7eb" stroke-width="1.5"/>
+  <line x1="52" y1="320" x2="548" y2="320" stroke="#f3f4f6" stroke-width="1"/>
+  <line x1="52" y1="260" x2="548" y2="260" stroke="#f3f4f6" stroke-width="1"/>
+  <line x1="52" y1="200" x2="548" y2="200" stroke="#f3f4f6" stroke-width="1"/>
+
+  <path d="M 52 340 L 122 300 L 192 320 L 262 260 L 332 240 L 402 200 L 472 220 L 548 170 L 548 380 L 52 380 Z" fill="url(#lineArea)"/>
+  <polyline points="52,340 122,300 192,320 262,260 332,240 402,200 472,220 548,170" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="122" cy="300" r="5" fill="#2563eb"/>
+  <circle cx="262" cy="260" r="5" fill="#2563eb"/>
+  <circle cx="402" cy="200" r="5" fill="#2563eb"/>
+  <circle cx="548" cy="170" r="6" fill="#1e40af" stroke="#ffffff" stroke-width="2"/>
+</svg>
