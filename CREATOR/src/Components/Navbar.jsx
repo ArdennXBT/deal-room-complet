@@ -6,10 +6,10 @@ import { useSyncExternalStore } from 'react'
 import Button from './Button'
 
 const LIENS_NAV = [
-  { nom: "Accueil",   lien: "/"           },
-  { nom: "Créateurs", lien: "/createurs"  },
-  { nom: "Campagnes", lien: "/campagnes"  },
-  { nom: "Dashboard", lien: "/dashboard"  },
+  { nom: "Accueil",   lien: "/",           publique: true  },
+  { nom: "Créateurs", lien: "/createurs",  publique: false },
+  { nom: "Campagnes", lien: "/campagnes",  publique: false },
+  { nom: "Dashboard", lien: "/dashboard",  publique: false },
 ]
 
 function getUtilisateurSnapshot() {
@@ -37,11 +37,13 @@ function Navbar() {
     navigate('/')
   }
 
+  const liensAffiches = LIENS_NAV.filter(item => item.publique || utilisateur)
+
   return (
     <nav>
-      <span className="logo">Creator Deal Room</span>
+      <Link to="/" className="logo">Creator Deal Room</Link>
       <ul>
-        {LIENS_NAV.map((item, index) => (
+        {liensAffiches.map((item, index) => (
           <li key={index}>
             <Link to={item.lien}>{item.nom}</Link>
           </li>
