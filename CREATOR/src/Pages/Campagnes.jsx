@@ -1,5 +1,3 @@
-
-
 import './Campagnes.css'
 import { useState, useEffect } from 'react'
 
@@ -24,7 +22,7 @@ function Campagnes() {
 
   const chargerCampagnes = async () => {
     try {
-      const reponse = await fetch('http://localhost:5000/api/campagnes')
+      const reponse = await fetch(`${import.meta.env.VITE_API_URL}/api/campagnes`)
       const data = await reponse.json()
 
       if (!reponse.ok) {
@@ -60,7 +58,7 @@ function Campagnes() {
     const token = localStorage.getItem('token')
 
     try {
-      const reponse = await fetch('http://localhost:5000/api/campagnes', {
+      const reponse = await fetch(`${import.meta.env.VITE_API_URL}/api/campagnes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +95,7 @@ function Campagnes() {
     const token = localStorage.getItem('token')
 
     try {
-      const reponse = await fetch(`http://localhost:5000/api/campagnes/${campagneId}/postuler`, {
+      const reponse = await fetch(`${import.meta.env.VITE_API_URL}/api/campagnes/${campagneId}/postuler`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`

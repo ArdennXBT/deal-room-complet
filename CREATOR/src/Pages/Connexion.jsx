@@ -26,7 +26,7 @@ function Connexion() {
     setChargement(true)
 
     try {
-      const reponse = await fetch('http://localhost:5000/api/auth/login', {
+      const reponse = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -28,8 +28,8 @@ function Inscription() {
     setChargement(true)
 
     const url = role === 'createur'
-      ? 'http://localhost:5000/api/createurs'
-      : 'http://localhost:5000/api/marques'
+      ? `${import.meta.env.VITE_API_URL}/api/createurs`
+      : `${import.meta.env.VITE_API_URL}/api/marques`
 
     try {
       const reponse = await fetch(url, {
